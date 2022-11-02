@@ -8,13 +8,16 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Constraint(validatedBy = RegisterClientDTO.class)
-@Target({ ElementType.TYPE })
-@Retention(RetentionPolicy.RUNTIME)
+//@Constraint(validatedBy = RegisterClientDTO.class)
+//@Target({ ElementType.TYPE })
+//@Retention(RetentionPolicy.RUNTIME)
 public @interface PasswordsMatch {
 
-    String message() default "Passwords don't match!";
 
-    String password();
-    String confirmPassword();
+//    String message() default "Passwords don't match!";
+//
+//    String password();
+//    String confirmPassword();
+
 }
+

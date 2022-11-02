@@ -30,6 +30,7 @@ public class UserController {
     }
 
     //GET ALL USERS THAT ARE CLIENTS(id, full name, email):
+    /*
     @GetMapping(value = "/clients")
     public ResponseEntity<List<ClientDTO>> getClients(){
         List<ClientDTO> clientDtos = userService.findClients();
@@ -42,6 +43,7 @@ public class UserController {
         UUID personID = userService.insert(clientDTO);
         return new ResponseEntity<>(personID, HttpStatus.CREATED);
     }
+    */
 
 
 //    public ResponseEntity<List<PersonDTO>> getPersons() {

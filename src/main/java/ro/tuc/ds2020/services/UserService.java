@@ -21,6 +21,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    /*
     public List<ClientDTO> findClients() {
         return null;
     }
@@ -30,4 +31,5 @@ public class UserService {
 //        userRepository.
         return null;
     }
+     */
 }
