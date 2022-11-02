@@ -54,8 +54,8 @@ stages:
       - task: PublishCodeCoverageResults@1
         displayName: "Publish publish code coverage"
         inputs:
-          summaryFileLocation: $(System.DefaultWorkingDirectory)/target/site/jacoco/jacoco.xml
-          pathToSources: $(System.DefaultWorkingDirectory)/src/main/java/
+          summaryFileLocation: $(Build.SourcesDirectory)/target/site/jacoco/jacoco.xml
+          pathToSources: $(Build.SourcesDirectory)/src/main/java/
   - job: Build
     displayName: Build
     pool:
