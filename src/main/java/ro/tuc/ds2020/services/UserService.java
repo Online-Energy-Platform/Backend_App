@@ -26,7 +26,8 @@ public class UserService {
     }
 
     public UUID insert(RegisterClientDTO clientDTO) {
-        User userToInsert = UserBuilder.toEntity(clientDTO);
-        userRepository.
+ //       User userToInsert = UserBuilder.toEntity(clientDTO);
+//        userRepository.
+        return null;
     }
 }
