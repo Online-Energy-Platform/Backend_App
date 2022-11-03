@@ -68,7 +68,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags:  |
+        tags: |
           latest
           $(Build.BuildId)
     - task: CopyFiles@2
