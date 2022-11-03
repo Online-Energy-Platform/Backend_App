@@ -54,8 +54,8 @@ stages:
       - task: PublishCodeCoverageResults@1
         displayName: "Publish publish code coverage"
         inputs:
-          summaryFileLocation: $(Agent.TempDirectory)//target/site/jacoco/jacoco.xml
-          pathToSources: $(Agent.TempDirectory)//src/main/java/
+          summaryFileLocation: $(System.DefaultWorkingDirectory)/target/site/jacoco/jacoco.xml
+          pathToSources: $(System.DefaultWorkingDirectory)/src/main/java/
   - job: Build
     displayName: Build
     pool:
@@ -68,7 +68,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags:  |
+        tags: |
           latest
           $(Build.BuildId)
     - task: CopyFiles@2
