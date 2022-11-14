@@ -4,16 +4,19 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 import java.util.UUID;
 
 @Entity
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Type(type = "uuid-binary")
+    @Type(type = "uuid-char")
     private UUID id;
 
     @Column(name = "first_name", nullable = false)

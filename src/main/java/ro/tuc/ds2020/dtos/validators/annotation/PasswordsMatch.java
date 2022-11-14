@@ -1,23 +1,21 @@
 package ro.tuc.ds2020.dtos.validators.annotation;
 
-import ro.tuc.ds2020.dtos.RegisterClientDTO;
-
+import ro.tuc.ds2020.dtos.validators.PasswordsMatchValidator;
 import javax.validation.Constraint;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import javax.validation.Payload;
+import java.lang.annotation.*;
 
-//@Constraint(validatedBy = RegisterClientDTO.class)
-//@Target({ ElementType.TYPE })
-//@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = PasswordsMatchValidator.class)
+@Target({ ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
 public @interface PasswordsMatch {
 
-
-//    String message() default "Passwords don't match!";
-//
-//    String password();
-//    String confirmPassword();
+    String message() default "Passwords do not match!";
+    String password();
+    String confirmPassword();
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
 
 }
 

@@ -4,16 +4,19 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-public class EnergyConsumption {
+public class EnergyConsumption implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Type(type = "uuid-binary")
+    @Type(type = "uuid-char")
     private UUID id;
 
     @Column(name = "timestamp", nullable = false)

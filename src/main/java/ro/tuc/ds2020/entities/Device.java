@@ -4,16 +4,19 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 import java.util.UUID;
 
 @Entity
-public class Device {
+public class Device implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Type(type = "uuid-binary")
+    @Type(type = "uuid-char")
     private UUID id;
 
     @Column(name = "description")
@@ -26,7 +29,7 @@ public class Device {
     private int maxHEnergyConsumption;
 
     @ManyToOne()
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
@@ -41,6 +44,14 @@ public class Device {
         this.address = address;
         this.maxHEnergyConsumption = maxHEnergyConsumption;
         this.user = user;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getDescription() {
