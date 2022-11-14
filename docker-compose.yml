@@ -15,7 +15,7 @@ services:
       MYSQL_DATABASE: 'online-platform'
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'root'
-      MYSQL_ROOT_PASSWORD: 'root'
+      #MYSQL_ROOT_PASSWORD: 'root'
     ports:
       - "3306:3306"
     container_name: demo-db
