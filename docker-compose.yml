@@ -4,18 +4,18 @@ services:
 
   demo-db:
     image: alexandrapop30641.azurecr.io/db
-    healthcheck:
-      #test: ["CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root"]
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      timeout: 45s
-      interval: 10s
-      retries: 5
+    # healthcheck:
+    #   #test: ["CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root"]
+    #   test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+    #   timeout: 45s
+    #   interval: 10s
+    #   retries: 5
     restart: always
     environment:
       MYSQL_DATABASE: 'online-platform'
-      MYSQL_USER: 'root'
-      MYSQL_PASSWORD: 'root'
-      #MYSQL_ROOT_PASSWORD: 'root'
+      # MYSQL_USER: 'root'
+      # MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
     ports:
       - "3306:3306"
     container_name: demo-db
@@ -33,5 +33,5 @@ services:
       - DB_PASSWORD=root
       - DB_DBNAME=online-platform
     depends_on:
-      demo-db:
-        condition: service_healthy
+      demo-db
+        # condition: service_healthy
