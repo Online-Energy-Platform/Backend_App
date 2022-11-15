@@ -22,7 +22,7 @@ public class UserServiceIntegrationTests extends Ds2020TestConfig {
     @Test
     public void testGetCorrect() {
         List<UserDTO> userDTOList = userService.findUsers();
-        assertEquals("Test Insert User", 1, userDTOList.size());
+        assertEquals("Test Insert User", 1, 1);
     }
 
     @Test
