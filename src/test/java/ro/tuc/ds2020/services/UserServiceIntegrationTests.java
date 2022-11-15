@@ -27,7 +27,7 @@ public class UserServiceIntegrationTests extends Ds2020TestConfig {
 
     @Test
     public void testInsertCorrectWithGetById() {
-        RegisterUserDTO u = new RegisterUserDTO("John", "Somewhere Else street", "email@email.com", "parola", "parola", "CLIENT");
+        RegisterUserDTO u = new RegisterUserDTO("John", "Travolta", "email@email.com", "parola", "parola", "CLIENT");
         UUID insertedID = userService.insert(u);
 
         UserDTO insertedUser = new UserDTO(insertedID, u.getFirstName() + " " + u.getLastName(), u.getEmail(), u.getRole());
@@ -38,7 +38,7 @@ public class UserServiceIntegrationTests extends Ds2020TestConfig {
 
     @Test
     public void testInsertCorrectWithGetAll() {
-        RegisterUserDTO u = new RegisterUserDTO("John", "Somewhere Else street", "email@email.com", "parola", "parola", "CLIENT");
+        RegisterUserDTO u = new RegisterUserDTO("John", "Travolta", "email@email.com", "parola", "parola", "CLIENT");
         userService.insert(u);
 
         List<UserDTO> userDTOList = userService.findUsers();
