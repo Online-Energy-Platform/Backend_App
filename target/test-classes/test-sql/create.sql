@@ -1,2 +1,2 @@
-INSERT INTO person (id, name, address, age) values
-    ('00201D1E61F3401588BF4292B86E22E4', 'My Name', 'My Address', 20);
+INSERT INTO user (id, firstName, lastName, email, password) values
+    ('0827d1da-4137-4da8-a546-bf4438eb477f', 'My Name', 'My name' 'email@email.com', 'parola1');
