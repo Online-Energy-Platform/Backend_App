@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ro.tuc.ds2020.dtos.InsertEnergyConsumptionDTO;
 import ro.tuc.ds2020.dtos.ViewEnergyConsumptionDTO;
 import ro.tuc.ds2020.entities.EnergyConsumption;
 import ro.tuc.ds2020.repositories.EnergyConsumptionRepository;
@@ -32,4 +33,9 @@ public class EnergyConsumptionService {
         }
         return viewEnergyConsumptionDTOList;
     }
+
+//    public UUID insert(InsertEnergyConsumptionDTO insertEnergyConsumptionDTO) {
+//        //TO_DO
+//        return null;
+//    }
 }

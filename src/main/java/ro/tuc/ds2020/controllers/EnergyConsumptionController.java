@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ro.tuc.ds2020.dtos.InsertEnergyConsumptionDTO;
 import ro.tuc.ds2020.dtos.ViewEnergyConsumptionDTO;
 import ro.tuc.ds2020.services.EnergyConsumptionService;
 
@@ -28,5 +29,11 @@ public class EnergyConsumptionController {
         List<ViewEnergyConsumptionDTO> viewEnergyConsumptionDTOList = energyConsumptionService.getConsumptionsByDeviceAndDate(deviceId);
         return new ResponseEntity<>(viewEnergyConsumptionDTOList, HttpStatus.OK);
     }
+
+//    @PostMapping()
+//    public ResponseEntity<UUID> insertTuple(@RequestBody InsertEnergyConsumptionDTO insertEnergyConsumptionDTO){
+//        UUID tupleID = energyConsumptionService.insert(insertEnergyConsumptionDTO);
+//        return new ResponseEntity<>(tupleID, HttpStatus.CREATED);
+//    }
 
 }
