@@ -39,6 +39,14 @@ public class EnergyConsumption implements Serializable {
         this.device = device;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
     public LocalDateTime getTimestamp() {
         return timestamp;
     }
