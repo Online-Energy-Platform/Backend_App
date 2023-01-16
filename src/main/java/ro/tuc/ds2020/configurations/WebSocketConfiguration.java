@@ -12,8 +12,8 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        //PREFIXUL SOCKET-ULUI DESCHIS INTRE FRONTEND SI BACKEND:
-        registry.enableSimpleBroker("/energyConsumptionSimulation");
+        //PREFIXUL SOCKET-ULUI DESCHIS INTRE FRONTEND SI BACKEND PENTRU NOTIFICARE SI CHAT:
+        registry.enableSimpleBroker("/energyConsumptionSimulation", "/chat", "/chatNotifications");
         //registry.setApplicationDestinationPrefixes("/app");
     }
 
@@ -21,5 +21,11 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // SETAM UN ENDPOINT PENTRU WEBSOCKET-UL PARTII DE BACKEND:
         registry.addEndpoint("/notificationServer").setAllowedOrigins("*").withSockJS();
+
+        // PENTRU CHAT:
+        registry.addEndpoint("/chatServer").setAllowedOrigins("*").withSockJS();
+
+        // PENTRU NOTIFICARILE CHAT-ULUI:
+        registry.addEndpoint("/chatNotificationsServer").setAllowedOrigins("*").withSockJS();
     }
 }
