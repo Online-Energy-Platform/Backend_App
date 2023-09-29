@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '3ed64a7b-bd07-4383-8309-465ea8c1ca29'
-  imageRepository: 'alexandrapop30641backend'
-  containerRegistry: 'alexandrapop30641.azurecr.io'
+  dockerRegistryServiceConnection: ''
+  imageRepository: ''
+  containerRegistry: ''
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
 
